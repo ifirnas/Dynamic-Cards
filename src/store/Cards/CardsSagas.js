@@ -7,7 +7,6 @@ import * as TYPES from "./CardsTypes";
 export function* sagasRequestCards() {
   try {
     const response = yield call(API.apiCardListRequest);
-    console.log('response: ', response);
     yield put(ACTIONS.actionReceive(response.data));
   } catch (err) {
     alert(err);
